@@ -1,0 +1,12 @@
+.main {
+   background-color: rgb(227, 224, 224);
+   padding: 20px 50px;
+
+   .item {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-column-gap: 15px;
+      grid-row-gap: 15px;
+   }
+}
