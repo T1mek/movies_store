@@ -1,21 +1,28 @@
 import React from 'react'
-import styles from './MoviesItem.module.scss'
+import styles from './MoviesItems.module.scss'
 
-import { IMoviesItem } from '../../pages/Homepage/HomePage'
-
-
+import {Link} from "react-router-dom";
 
 
 
 
-const MoviesItem:React.FC<IMoviesItem> = ({id, imageUrl}) => {
+
+
+
+const MoviesItem:React.FC = () => {
+    // {  filmId, nameRu,nameEu, year, filmLength, countries, genres, rating, posterUrl, posterUrlPreview}
+
+
+
   return (
-    <div>
+      <div className={styles.films}>
+          {/*<Link key={filmId} to={`/films/${filmId}`}>*/}
+          {/*<img src={posterUrlPreview} alt="Poster"/>*/}
+          {/*</Link>*/}
+
+      </div>
 
 
-      {/* {id}
-      <img src={imageUrl} alt="" /> */}
-    </div>
   )
 }
 
