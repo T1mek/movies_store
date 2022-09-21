@@ -1,6 +1,6 @@
-import { createSlice,createAsyncThunk} from "@reduxjs/toolkit";
+import { createSlice,createAsyncThunk,PayloadAction} from "@reduxjs/toolkit";
 import axios from "axios";
-
+import {RootState} from "../store";
 
 
 export type IFilms = {
@@ -24,7 +24,7 @@ export type IItems = {
 }
 
 
-export const getFilms = createAsyncThunk(
+export const getFilms = createAsyncThunk<IItems>(
     'films/getFilms',
     async ()=> {
         const {data} = await axios.get<IItems>(`https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_250_BEST_FILMS&page=1`,{
@@ -34,6 +34,7 @@ export const getFilms = createAsyncThunk(
             }
                 })
         return data
+
     }
 )
 
@@ -46,28 +47,31 @@ const initialState:IItems = {
 
 
 const filmsSlice = createSlice({
-    name:'Films',
+    name:'films',
     initialState,
     reducers:{
-        setFilms(state,action){
+        setFilms(state,action:PayloadAction<IFilms[]>){
             state.films = action.payload
         },
 },
-    extraReducers:(builder)=>{
-        builder.addCase(getFilms.pending,(state,action)=>{
-
+    extraReducers:{
+        [getFilms.pending.type]:(state,action:PayloadAction<IFilms[]>)=>{
+            console.log('загрука')
             state.films=[]
-        }),
-            builder.addCase(getFilms.fulfilled,(state,action)=>{
-                state.films=action.payload
-            }),
-            builder.addCase(getFilms.pending,(state,action)=>{
-                state.films=[]
-            })
+        },
+        [getFilms.fulfilled.type]:(state,action:PayloadAction<IFilms[]>)=>{
+            console.log('загрука')
+            state.films=action.payload
+        },
+        [getFilms.rejected.type]:(state,action:PayloadAction<IFilms[]>)=>{
+            console.log('загрука')
+            state.films=[]
+        },
     }
 }
 )
 
+export const filmsAll = (state: RootState) => state.filmsSlice;
 
 export const {setFilms} = filmsSlice.actions;
 export default filmsSlice.reducer;

@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './FullFilm.module.scss'
 
 
+
 const FullName : React.FC = () => {
 
 
