@@ -7,13 +7,15 @@ export type IFilms = {
     filmId: number,
     nameRu: string,
     nameEu: string,
-    year: string,
     filmLength: string,
     countries: string[],
     genres: string[],
     rating: string[],
     posterUrl: string,
     posterUrlPreview: string,
+    nameOriginal:string,
+    shortDescription:string,
+    year:number,
 }
 
 
@@ -50,20 +52,22 @@ const filmsSlice = createSlice({
     name:'films',
     initialState,
     reducers:{
-        setFilms(state,action:PayloadAction<IFilms[]>){
-            state.films = action.payload
+        setFilms(state,action:PayloadAction<IItems>){
+            state.films = action.payload.films
         },
+
+
 },
     extraReducers:{
-        [getFilms.pending.type]:(state,action:PayloadAction<IFilms[]>)=>{
+        [getFilms.pending.type]:(state,action:PayloadAction<IItems>)=>{
             console.log('загрука')
             state.films=[]
         },
-        [getFilms.fulfilled.type]:(state,action:PayloadAction<IFilms[]>)=>{
-            console.log('загрука')
-            state.films=action.payload
+        [getFilms.fulfilled.type]:(state,action:PayloadAction<IItems>)=>{
+
+            state.films=action.payload.films
         },
-        [getFilms.rejected.type]:(state,action:PayloadAction<IFilms[]>)=>{
+        [getFilms.rejected.type]:(state,action:PayloadAction<IItems>)=>{
             console.log('загрука')
             state.films=[]
         },
@@ -71,7 +75,7 @@ const filmsSlice = createSlice({
 }
 )
 
-export const filmsAll = (state: RootState) => state.filmsSlice;
+
 
 export const {setFilms} = filmsSlice.actions;
 export default filmsSlice.reducer;

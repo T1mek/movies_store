@@ -31,6 +31,7 @@ const MoviesItem:React.FC<IFilms> = ( {
           <Link key={filmId} to={`/films/${filmId}`}>
           <img src={posterUrlPreview} alt="Poster"/>
           </Link>
+          <p>{nameRu}</p>
 
 
       </div>
