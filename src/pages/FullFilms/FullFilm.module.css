@@ -18,8 +18,9 @@
 .fullfilm .wrapper .titleFilm .aboutFilm {
   margin-top: 80px;
   margin-left: 80px;
+  list-style-type: none;
 }
-.fullfilm .wrapper .titleFilm .aboutFilm p {
+.fullfilm .wrapper .titleFilm .aboutFilm li {
   margin-top: 20px;
 }
 

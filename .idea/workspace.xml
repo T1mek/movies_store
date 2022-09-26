@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1872f7c9-e241-42ce-a7e3-2d2a112fa80e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/redux/slices/videoSlice.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MoviesItem/MoviesItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesItem/MoviesItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/FullFilms/FullFilm.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FullFilms/FullFilm.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/FullFilms/FullFilm.module.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FullFilms/FullFilm.module.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/FullFilms/FullFilm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FullFilms/FullFilm.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/FullFilms/FullFilm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FullFilms/FullFilm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Homepage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Homepage/HomePage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/slices/filmsSlice.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/filmsSlice.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +80,9 @@
       <workItem from="1663761065994" duration="7985000" />
       <workItem from="1663834063570" duration="467000" />
       <workItem from="1663835581747" duration="3692000" />
-      <workItem from="1663839380167" duration="16955000" />
+      <workItem from="1663839380167" duration="17376000" />
+      <workItem from="1663931494274" duration="9596000" />
+      <workItem from="1664182682318" duration="16393000" />
     </task>
     <servers />
   </component>

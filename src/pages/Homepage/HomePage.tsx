@@ -10,6 +10,7 @@ import MoviesItem from "../../components/MoviesItem/MoviesItem";
 
 const HomePage: React.FC = () => {
     const {films,pagesCount}=useAppSelector(state => state.filmsSlice)
+
     const dispatch = useAppDispatch()
 
     React.useEffect(()=>{

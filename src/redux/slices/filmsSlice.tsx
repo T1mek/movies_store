@@ -1,6 +1,13 @@
 import { createSlice,createAsyncThunk,PayloadAction} from "@reduxjs/toolkit";
 import axios from "axios";
-import {RootState} from "../store";
+
+
+type countries = {
+    country:string
+}
+type genres = {
+    genre:string
+}
 
 
 export type IFilms = {
@@ -8,20 +15,23 @@ export type IFilms = {
     nameRu: string,
     nameEu: string,
     filmLength: string,
-    countries: string[],
-    genres: string[],
+    countries: countries[],
+    genres: genres[],
     rating: string[],
     posterUrl: string,
     posterUrlPreview: string,
     nameOriginal:string,
     shortDescription:string,
     year:number,
+    description:string,
+    webUrl:string,
 }
 
 
 export type IItems = {
     pagesCount:number,
     films:IFilms[],
+
 
 }
 
@@ -45,6 +55,7 @@ const initialState:IItems = {
     pagesCount:1,
 
 
+
 }
 
 
@@ -55,7 +66,6 @@ const filmsSlice = createSlice({
         setFilms(state,action:PayloadAction<IItems>){
             state.films = action.payload.films
         },
-
 
 },
     extraReducers:{
