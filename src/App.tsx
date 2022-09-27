@@ -16,7 +16,6 @@ const App : React.FC=()=> {
 
 
 
-
   return (
     <div className="App">
       <Header />
@@ -25,7 +24,7 @@ const App : React.FC=()=> {
 
 
             <Route path='/' element={<HomePage />}  />
-            <Route path='/films/:filmId' element={<FullFilm/>}/>
+            <Route path='/films/:id' element={<FullFilm/>}/>
 
         </Routes>
     </div>

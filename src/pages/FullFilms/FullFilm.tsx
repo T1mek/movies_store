@@ -1,10 +1,14 @@
 import React from 'react'
 import style from './FullFilm.module.scss'
 import {useParams, useNavigate} from "react-router-dom";
-import {IFilms, IItems} from "../../redux/slices/filmsSlice";
+import {IFilms} from "../../redux/slices/filmsSlice";
 import axios from "axios";
-import {getVideo, IVideos} from "../../redux/slices/videoSlice";
-import {useAppDispatch, useAppSelector} from "../../redux/slices/hooks";
+
+
+import ReactPlayer from "react-player";
+
+
+
 
 
 
@@ -18,9 +22,7 @@ const FullName : React.FC= () => {
 
 const [films,setFilms]=React.useState<IFilms>()
     const navigation = useNavigate()
-const dispatch = useAppDispatch()
-const {filmId} = useParams()
-
+const {id} = useParams()
 
 
 
@@ -28,15 +30,7 @@ const {filmId} = useParams()
         async function fetchFilms(){
 
             try {
-                const {data}= await axios.get(`https://kinopoiskapiunofficial.tech/api/v2.2/films/${filmId}`, {
-                    headers: {
-                        'X-API-KEY': '26604d89-ae5c-49f8-b044-44ae69bde220',
-                        'Content-Type': 'application/json',
-                    }
-
-                }
-
-
+                const {data}= await axios.get(`https://kinobd.ru/api/films/${id}`
                 )
                 setFilms(data)
 
@@ -47,13 +41,10 @@ const {filmId} = useParams()
                 navigation('/')
             }
         }
+
         fetchFilms()
-    },[navigation,filmId])
+    },[navigation,id])
 
-React.useEffect(()=>{
-
-    dispatch(getVideo())
-},[dispatch])
 
 
 
@@ -68,21 +59,29 @@ React.useEffect(()=>{
     return (
         <div className={style.fullfilm}>
             <div className={style.wrapper}>
-                <img height={500} src={films.posterUrl} alt="Poster"/>
+                <img height={500} src={films.small_poster} alt="Poster"/>
                     <div className={style.titleFilm}>
-                <h2>{films.nameRu}  (<span>{films.year}г. </span>) смотерть онлайн</h2>
+                <h2>{films.name_russian}  (<span>{films.year}г. </span>) смотерть онлайн</h2>
                         <ul className={style.aboutFilm}>
-                            <li>Название : {films.nameOriginal}</li>
+                            <li>Название : {films.name_original}</li>
                             <li>Год выхода : {films.year}г.</li>
-                            <li>Страна: {films && films.countries.map(c => c.country).join()} </li>
-                            <li>Жанр: {films && films.genres.map(g => g.genre).join()} </li>
+                            <li>Страна: {films.country_ru} </li>
+                            <li>Жанр: {films && films.genres.map(g => g.name_ru).join()} </li>
+                            <li> Герой : {films && films.persons.map(p=>p.name_russian).join()}</li>
                             <li> Описание : {films && films.description}</li>
+
                             </ul>
+                            <ReactPlayer width={800} style={{marginLeft:'140px',marginTop:'70px'}} url={films.trailer}/>
+
+
+
+
 
 
 
 
                     </div>
+
 
 
 

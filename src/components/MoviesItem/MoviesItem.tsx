@@ -11,16 +11,34 @@ import {IFilms} from "../../redux/slices/filmsSlice";
 
 
 const MoviesItem:React.FC<IFilms> = ( {
-                                          filmId,
-                                          nameRu,
-                                          nameEu,
-                                          year,
-                                          filmLength,
-                                          countries,
+                                          // filmId,
+                                          // nameRu,
+                                          // nameEu,
+                                          // year,
+                                          // filmLength,
+                                          // countries,
+                                          // genres,
+                                          // rating,
+                                          // posterUrl,
+                                          // posterUrlPreview,
+                                          age_restriction,
+                                          big_poster,
+                                          small_poster,
+                                          budget,
+                                          name_russian,
+                                          country_ru,
                                           genres,
                                           rating,
-                                          posterUrl,
-                                          posterUrlPreview,
+                                          name_original,
+                                          persons,
+                                          year,
+                                          description,
+                                          webUrl,
+                                          trailer,
+                                          id,
+
+
+
                                       }
 ) => {
 
@@ -28,10 +46,10 @@ const MoviesItem:React.FC<IFilms> = ( {
 
   return (
       <div className={styles.films}>
-          <Link key={filmId} to={`/films/${filmId}`}>
-          <img src={posterUrlPreview} alt="Poster"/>
+          <Link key={id} to={`/films/${id}`}>
+          <img src={big_poster} alt="Poster"/>
           </Link>
-          <p>{nameRu}</p>
+          <p>{name_russian}</p>
 
 
       </div>

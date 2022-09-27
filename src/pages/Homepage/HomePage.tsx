@@ -9,15 +9,13 @@ import MoviesItem from "../../components/MoviesItem/MoviesItem";
 
 
 const HomePage: React.FC = () => {
-    const {films,pagesCount}=useAppSelector(state => state.filmsSlice)
+    const {data,current_page}=useAppSelector(state => state.filmsSlice)
 
     const dispatch = useAppDispatch()
 
     React.useEffect(()=>{
         dispatch(getFilms())
     },[dispatch])
-
-
 
 
 
@@ -29,8 +27,8 @@ const HomePage: React.FC = () => {
 
          <div className={styles.item}>
 
-             {films && films.map((item)=>(
-                 <MoviesItem key={item.filmId} {...item} />
+             {data && data.map((item)=>(
+                 <MoviesItem key={item.id} {...item} />
              ))}
 
 

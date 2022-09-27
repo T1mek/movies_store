@@ -2,35 +2,41 @@ import { createSlice,createAsyncThunk,PayloadAction} from "@reduxjs/toolkit";
 import axios from "axios";
 
 
-type countries = {
-    country:string
-}
+
 type genres = {
-    genre:string
+    id:number,
+    name_ru:string
+}
+type person = {
+    id:number,
+    name_russian:string,
+
 }
 
 
 export type IFilms = {
-    filmId: number,
-    nameRu: string,
-    nameEu: string,
-    filmLength: string,
-    countries: countries[],
+    age_restriction: string,
+    big_poster: string,
+    small_poster:string,
+    budget: string,
+    name_russian: string,
+    country_ru: string,
     genres: genres[],
     rating: string[],
-    posterUrl: string,
-    posterUrlPreview: string,
-    nameOriginal:string,
-    shortDescription:string,
+    name_original: string,
+    persons:person[],
     year:number,
     description:string,
     webUrl:string,
+    trailer:string,
+    id:number,
+    player:string
 }
 
 
 export type IItems = {
-    pagesCount:number,
-    films:IFilms[],
+    current_page:number,
+    data:IFilms[],
 
 
 }
@@ -39,20 +45,16 @@ export type IItems = {
 export const getFilms = createAsyncThunk<IItems>(
     'films/getFilms',
     async ()=> {
-        const {data} = await axios.get<IItems>(`https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_250_BEST_FILMS&page=1`,{
-            headers: {
-                'X-API-KEY': '26604d89-ae5c-49f8-b044-44ae69bde220',
-                'Content-Type': 'application/json',
-            }
-                })
+        const {data} = await axios.get<IItems>(`https://kinobd.ru/api/films`
+                )
         return data
 
     }
 )
 
 const initialState:IItems = {
-    films:[],
-    pagesCount:1,
+    data:[],
+    current_page:1,
 
 
 
@@ -64,22 +66,21 @@ const filmsSlice = createSlice({
     initialState,
     reducers:{
         setFilms(state,action:PayloadAction<IItems>){
-            state.films = action.payload.films
+            state.data = action.payload.data
         },
 
 },
     extraReducers:{
         [getFilms.pending.type]:(state,action:PayloadAction<IItems>)=>{
             console.log('загрука')
-            state.films=[]
+            state.data=[]
         },
         [getFilms.fulfilled.type]:(state,action:PayloadAction<IItems>)=>{
-
-            state.films=action.payload.films
+            state.data=action.payload.data
         },
         [getFilms.rejected.type]:(state,action:PayloadAction<IItems>)=>{
             console.log('загрука')
-            state.films=[]
+            state.data=[]
         },
     }
 }
