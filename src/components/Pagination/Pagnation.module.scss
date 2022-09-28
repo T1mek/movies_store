@@ -1,0 +1,34 @@
+.root {
+  display: flex;
+  justify-content: center;
+  li {
+	display: inline-block;
+
+	a {
+	  display: inline-block;
+
+	  height: 35px;
+	  background-color: #d2d0d0;
+	  width: 35px;
+	  border-radius: 20px;
+	  border: 1px solid #8a7c73;
+	  text-align: center;
+	  padding-top: 7px;
+	  cursor: pointer;
+	  margin-right: 10px;
+	  color: #726d6d;
+	  &:hover {
+		background-color: #e0905c;
+		color: white;
+	  }
+	}
+  }
+  :global {
+	a {
+	  &:focus {
+		background-color: #f56f46;
+		color: white;
+	  }
+	}
+  }
+}

@@ -1,10 +1,12 @@
 import {configureStore} from "@reduxjs/toolkit";
 import filmsSlice from './slices/filmsSlice'
+import filterSlice from "./slices/fillterSlice";
 
 
  const store = configureStore({
     reducer:{
         filmsSlice,
+        filterSlice
 
     }
 })

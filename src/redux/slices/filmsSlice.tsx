@@ -42,11 +42,12 @@ export type IItems = {
 }
 
 
-export const getFilms = createAsyncThunk<IItems>(
+export const getFilms = createAsyncThunk<IItems,number>(
     'films/getFilms',
-    async ()=> {
-        const {data} = await axios.get<IItems>(`https://kinobd.ru/api/films`
-                )
+    async (pageCount)=> {
+
+
+        const {data} = await axios.get<IItems>(`https://kinobd.ru/api/films?page=${pageCount}`)
         return data
 
     }
