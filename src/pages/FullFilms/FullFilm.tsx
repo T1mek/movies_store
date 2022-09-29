@@ -56,6 +56,7 @@ const {id} = useParams()
 
 
 
+
     return (
         <div className={style.fullfilm}>
             <div className={style.wrapper}>
@@ -72,8 +73,6 @@ const {id} = useParams()
 
                             </ul>
                             <ReactPlayer width={800} style={{marginLeft:'140px',marginTop:'70px'}} url={films.trailer}/>
-
-
 
 
 

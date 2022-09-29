@@ -2,15 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1872f7c9-e241-42ce-a7e3-2d2a112fa80e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Pagination/Pagination.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Pagination/Pagnation.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/slices/fillterSlice.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MoviesItem/Skeleton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Categories/Categories.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Categories/Categories.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MoviesItem/MoviesItems.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MoviesItem/MoviesItems.module.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MoviesItem/MoviesItems.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesItem/MoviesItems.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pagination/Pagnation.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pagination/Pagnation.module.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/FullFilms/FullFilm.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/FullFilms/FullFilm.module.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/FullFilms/FullFilm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FullFilms/FullFilm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Homepage/HomePage.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Homepage/HomePage.module.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Homepage/HomePage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Homepage/HomePage.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Homepage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Homepage/HomePage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/slices/filmsSlice.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/filmsSlice.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +49,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -48,7 +61,7 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.stylelint": "",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "configurable.stylesheets.stylelint",
+    "settings.editor.selected.configurable": "configurable.group.language",
     "ts.external.directory.path": "C:\\Users\\mtroll\\Desktop\\git\\movies_store\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -86,6 +99,8 @@
       <workItem from="1664347983424" duration="30000" />
       <workItem from="1664352832773" duration="4952000" />
       <workItem from="1664361267725" duration="2487000" />
+      <workItem from="1664436722393" duration="27000" />
+      <workItem from="1664438235156" duration="7920000" />
     </task>
     <servers />
   </component>

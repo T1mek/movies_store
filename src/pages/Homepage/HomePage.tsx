@@ -8,9 +8,10 @@ import {useAppDispatch, useAppSelector} from "../../redux/slices/hooks";
 import MoviesItem from "../../components/MoviesItem/MoviesItem";
 import Pagination from "../../components/Pagination/Pagination";
 import {setPageCount} from "../../redux/slices/fillterSlice";
+import Skeleton from "../../components/MoviesItem/Skeleton";
 
 const HomePage: React.FC = () => {
-    const {data}=useAppSelector(state => state.filmsSlice)
+    const {data, status}=useAppSelector(state => state.filmsSlice)
     const {pageCount}=useAppSelector(state => state.filterSlice)
 
     const dispatch = useAppDispatch()
@@ -43,10 +44,19 @@ const HomePage: React.FC = () => {
 
          <div className={styles.item}>
 
-             {data && data.map((item)=>(
-                 <MoviesItem key={item.id} {...item} />
-             ))}
+             {/*{data && data.map((item)=>(*/}
+             {/*    <MoviesItem key={item.id} {...item} />*/}
+             {/*))}*/}
+             {status === 'error'?(
+                 <div>
+                     <h2> Произошла ошибка загрузки</h2>
+                 </div>
 
+             ):status === 'loading'?(
+                 [...new Array(50)].map((_,index)=><Skeleton key={index}/>)
+             ): (data.map((item)=>(
+                 <MoviesItem key={item.id} {...item} />)
+             ))}
 
        </div>
 

@@ -35,7 +35,7 @@ export type IFilms = {
 
 
 export type IItems = {
-    current_page:number,
+    status: 'loading' | 'successful' | 'error',
     data:IFilms[],
 
 
@@ -55,7 +55,8 @@ export const getFilms = createAsyncThunk<IItems,number>(
 
 const initialState:IItems = {
     data:[],
-    current_page:1,
+    status:'loading'
+
 
 
 
@@ -73,14 +74,15 @@ const filmsSlice = createSlice({
 },
     extraReducers:{
         [getFilms.pending.type]:(state,action:PayloadAction<IItems>)=>{
-            console.log('загрука')
+            state.status= 'loading'
             state.data=[]
         },
         [getFilms.fulfilled.type]:(state,action:PayloadAction<IItems>)=>{
+            state.status='successful'
             state.data=action.payload.data
         },
         [getFilms.rejected.type]:(state,action:PayloadAction<IItems>)=>{
-            console.log('загрука')
+            state.status='error'
             state.data=[]
         },
     }

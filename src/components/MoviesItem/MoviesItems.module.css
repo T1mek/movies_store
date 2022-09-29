@@ -1,5 +1,7 @@
 .films {
   margin: 15px;
+  height: 260px;
+  width: 100px;
 }
 .films img {
   height: 200px;
