@@ -80,6 +80,7 @@ const filmsSlice = createSlice({
         [getFilms.fulfilled.type]:(state,action:PayloadAction<IItems>)=>{
             state.status='successful'
             state.data=action.payload.data
+
         },
         [getFilms.rejected.type]:(state,action:PayloadAction<IItems>)=>{
             state.status='error'

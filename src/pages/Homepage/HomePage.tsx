@@ -10,7 +10,12 @@ import Pagination from "../../components/Pagination/Pagination";
 import {setPageCount} from "../../redux/slices/fillterSlice";
 import Skeleton from "../../components/MoviesItem/Skeleton";
 
-const HomePage: React.FC = () => {
+
+interface IHomePage{
+    search:string
+}
+
+const HomePage: React.FC<IHomePage> = ({search}) => {
     const {data, status}=useAppSelector(state => state.filmsSlice)
     const {pageCount}=useAppSelector(state => state.filterSlice)
 
@@ -19,6 +24,13 @@ const HomePage: React.FC = () => {
     const onClickPage = (number:number) => {
         dispatch(setPageCount(number))
     }
+
+    const filterSearch =
+        data.filter(films =>{
+             return films.name_russian.toLowerCase().includes(search.toLowerCase())
+        })
+
+
 
         React.useEffect(()=>{
         const fetchFilms = ()=>{
@@ -44,9 +56,7 @@ const HomePage: React.FC = () => {
 
          <div className={styles.item}>
 
-             {/*{data && data.map((item)=>(*/}
-             {/*    <MoviesItem key={item.id} {...item} />*/}
-             {/*))}*/}
+
              {status === 'error'?(
                  <div>
                      <h2> Произошла ошибка загрузки</h2>
@@ -54,7 +64,7 @@ const HomePage: React.FC = () => {
 
              ):status === 'loading'?(
                  [...new Array(50)].map((_,index)=><Skeleton key={index}/>)
-             ): (data.map((item)=>(
+             ): (filterSearch.map((item)=>(
                  <MoviesItem key={item.id} {...item} />)
              ))}
 

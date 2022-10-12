@@ -5,11 +5,15 @@ import Logo from '../../assets/logo.png'
 import searchImg from '../../assets/search.png'
 import {Link} from "react-router-dom";
 
+interface IHeader{
+    setSearch:(e:string)=>void
+}
 
-const Header: React.FC = () => {
+
+const Header: React.FC<IHeader> = ({setSearch}) => {
 
 
-   
+
    return (
       <div className={styles.header} >
           <Link to={'/'}>
@@ -17,10 +21,12 @@ const Header: React.FC = () => {
           </Link>
          <Navbar />
          <div className={styles.search}>
-            <input type="text" placeholder='Поиск...' />
+            <input
+                onChange={(e)=>setSearch(e.target.value)}
+                type="text" placeholder='Поиск...' />
             <img src={searchImg} alt="Search" width={17} />
          </div>
-         
+
 
       </div>
    )
