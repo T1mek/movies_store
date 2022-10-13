@@ -3,7 +3,7 @@ import styles from './HomePage.module.scss'
 import Categories from './../../components/Categories/Categories';
 
 
-import {getFilms} from "../../redux/slices/filmsSlice";
+import {getFilms,setRating,setPopularFilms} from "../../redux/slices/filmsSlice";
 import {useAppDispatch, useAppSelector} from "../../redux/slices/hooks";
 import MoviesItem from "../../components/MoviesItem/MoviesItem";
 import Pagination from "../../components/Pagination/Pagination";
@@ -11,11 +11,11 @@ import {setPageCount} from "../../redux/slices/fillterSlice";
 import Skeleton from "../../components/MoviesItem/Skeleton";
 
 
-interface IHomePage{
-    search:string
-}
 
-const HomePage: React.FC<IHomePage> = ({search}) => {
+
+
+
+const HomePage: React.FC = () => {
     const {data, status}=useAppSelector(state => state.filmsSlice)
     const {pageCount}=useAppSelector(state => state.filterSlice)
 
@@ -25,10 +25,24 @@ const HomePage: React.FC<IHomePage> = ({search}) => {
         dispatch(setPageCount(number))
     }
 
-    const filterSearch =
-        data.filter(films =>{
-             return films.name_russian.toLowerCase().includes(search.toLowerCase())
+
+    const searchRating = ()=>{
+        const copyFilms = data.concat()
+
+        const sortFilms = copyFilms.sort((a,b)=> {
+            return  a.rating_kp <= b.rating_kp ? 1 :-1
         })
+        dispatch(setRating(sortFilms))
+
+    }
+    const searchPopularFilm = ()=>{
+        const copyFilms = data.concat()
+        const lastFilms = copyFilms.sort((a,b)=>{
+            return a.popular_weight <= b.popular_weight ? 1 :-1
+        })
+        dispatch(setPopularFilms(lastFilms))
+    }
+
 
 
 
@@ -51,7 +65,7 @@ const HomePage: React.FC<IHomePage> = ({search}) => {
    return (
       <div className={styles.main}>
 
-         <Categories />
+         <Categories searchPopularFilm={searchPopularFilm} searchRating={searchRating} />
 
 
          <div className={styles.item}>
@@ -64,7 +78,7 @@ const HomePage: React.FC<IHomePage> = ({search}) => {
 
              ):status === 'loading'?(
                  [...new Array(50)].map((_,index)=><Skeleton key={index}/>)
-             ): (filterSearch.map((item)=>(
+             ): ( data && data.map((item)=>(
                  <MoviesItem key={item.id} {...item} />)
              ))}
 

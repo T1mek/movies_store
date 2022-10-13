@@ -14,16 +14,16 @@ import HomePage from './pages/Homepage/HomePage';
 
 const App : React.FC=()=> {
 
-const [search,setSearch]=React.useState('')
+
 
   return (
     <div className="App">
-      <Header setSearch={setSearch} />
+      <Header  />
 
         <Routes>
 
 
-            <Route path='/' element={<HomePage search={search} />}  />
+            <Route path='/' element={<HomePage  />}  />
             <Route path='/films/:id' element={<FullFilm/>}/>
 
         </Routes>

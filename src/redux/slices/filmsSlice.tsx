@@ -30,13 +30,17 @@ export type IFilms = {
     webUrl:string,
     trailer:string,
     id:number,
-    player:string
+    player:string,
+    rating_kp:number,
+    popular_weight:number,
 }
 
 
 export type IItems = {
     status: 'loading' | 'successful' | 'error',
     data:IFilms[],
+    search:[]
+
 
 
 }
@@ -55,7 +59,8 @@ export const getFilms = createAsyncThunk<IItems,number>(
 
 const initialState:IItems = {
     data:[],
-    status:'loading'
+    status:'loading',
+    search:[]
 
 
 
@@ -67,9 +72,18 @@ const filmsSlice = createSlice({
     name:'films',
     initialState,
     reducers:{
-        setFilms(state,action:PayloadAction<IItems>){
-            state.data = action.payload.data
+        setRating(state,action:PayloadAction<IFilms[]>){
+            state.data= action.payload
         },
+        setPopularFilms(state,action:PayloadAction<IFilms[]>){
+            state.data= action.payload
+        },
+        setSearchFilms(state,action:PayloadAction<IItems>){
+            state.search=[]
+            console.log(action.payload)
+
+        }
+
 
 },
     extraReducers:{
@@ -92,7 +106,7 @@ const filmsSlice = createSlice({
 
 
 
-export const {setFilms} = filmsSlice.actions;
+export const {setRating,setPopularFilms,setSearchFilms} = filmsSlice.actions;
 export default filmsSlice.reducer;
 
 
