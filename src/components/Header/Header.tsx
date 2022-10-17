@@ -18,8 +18,8 @@ const Header: React.FC = () => {
             const searchTitle = e.target.value
             const searchFilm = data.filter(films =>
                 films.name_russian.toLowerCase().includes(searchTitle.toLowerCase()))
-            console.log(searchFilm)
-            //@ts-ignore
+
+
             dispatch(setSearchFilms(searchFilm))
         }
 

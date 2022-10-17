@@ -78,9 +78,9 @@ const filmsSlice = createSlice({
         setPopularFilms(state,action:PayloadAction<IFilms[]>){
             state.data= action.payload
         },
-        setSearchFilms(state,action:PayloadAction<IItems>){
-            state.search=[]
-            console.log(action.payload)
+        setSearchFilms(state,action:PayloadAction<IFilms[]>){
+            state.data = action.payload
+
 
         }
 

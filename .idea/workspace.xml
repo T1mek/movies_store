@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1872f7c9-e241-42ce-a7e3-2d2a112fa80e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Categories/Categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Categories/Categories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Homepage/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Homepage/HomePage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/slices/filmsSlice.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/filmsSlice.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +35,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mtroll/Desktop/git/movies_store&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/t1mw/WebstormProjects/movies_store&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
@@ -86,7 +83,10 @@
       <workItem from="1664361267725" duration="2487000" />
       <workItem from="1664436722393" duration="27000" />
       <workItem from="1664438235156" duration="7920000" />
-      <workItem from="1665683135728" duration="8485000" />
+      <workItem from="1665683135728" duration="8750000" />
+      <workItem from="1665748575766" duration="154000" />
+      <workItem from="1665765185971" duration="283000" />
+      <workItem from="1666000213871" duration="475000" />
     </task>
     <servers />
   </component>
